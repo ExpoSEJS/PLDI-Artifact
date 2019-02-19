@@ -8,10 +8,13 @@ echo "build-essential"
 
 read  -n 1 -p "Press any key to continue" cont
 
-printf "\n[+] Fetching ExpoSE\n"
+printf "\n[+] Fetching ExpoSE (PLDI)\n"
 
 rm -rf ./ExpoSE/
 git clone https://github.com/ExpoSEJS/ExpoSE.git
+
+echo "[+] Install SPIN ExpoSE (Legacy)"
+(cd SPINExpose; npm install)
 
 echo "[+] Installing ExpoSE"
 

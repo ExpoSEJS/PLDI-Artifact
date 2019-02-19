@@ -1,3 +1,2 @@
 #!/bin/bash -e
-echo "export EXPOSE_PATH=\"$(./scripts/abspath ./)\" #EXPOSE_ENTRY" >> ~/.bash_profile
-echo "export PATH=\$PATH:\$EXPOSE_PATH" "#EXPOSE_ENTRY" >> ~/.bash_profile
+
