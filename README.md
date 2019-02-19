@@ -25,8 +25,10 @@ The install script will prepare ExpoSE as presented in our PLDI 19 paper and in 
 
 We have prepared a VirtualBox image running Ubuntu server with our environment already installed. Once the machine has finished booting the user details
 
-```username: test
-password: test```
+```
+username: test
+password: test
+```
 
 can be used to login to our sample user. From there the folder artifact will contain an exact copy of our artifact as it would be created by our installation script.
 
