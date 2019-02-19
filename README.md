@@ -42,9 +42,9 @@ In this section we describe how to use ExpoSE on simple programs (microbenchmark
 
 In ExpoSE all of the features described in the paper are now enabled by default. Environment flags are used to disable the features and can be used to test the impact of a specific feature on program coverage. The feature flags are:
 
-- EXPOSE_DISABLE_REGULAR_EXPRESSIONS: Setting `$EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1` will disable regular expressions entirely, forcing concretization. 
-- EXPOSE_DISABLE_CAPTURE_GROUPS: Setting `$EXPOSE_DISABLE_CAPTURE_GROUPS=1` will disable symbolic modelling of the capture groups within regular expressions, but still generate paths for the regular expressions themselves.
-- EXPOSE_DISABLE_REFINEMENTS: `$EXPOSE_DISABLE_REFINEMENTS=1` will disable the CEGAR scheme. If this is set then created paths will not be checked for correctness and analysis may be unsound.
+- Disable regular expression support: Setting `$EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1` will disable regular expressions entirely, forcing concretization. 
+- Disable symbolic capture group support: Setting `$EXPOSE_DISABLE_CAPTURE_GROUPS=1` will disable symbolic modelling of the capture groups within regular expressions, but still generate paths for the regular expressions themselves.
+- Disable CEGAR refinement scheme: `$EXPOSE_DISABLE_REFINEMENTS=1` will disable the CEGAR scheme. If this is set then created paths will not be checked for correctness and analysis may be unsound.
 
 ## Evaluating against micro benchmarks
 
