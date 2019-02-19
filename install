@@ -24,4 +24,5 @@ echo "Installed. Preparing to run unit tests."
 echo "If any tests fail, please use the VM image"
 
 read -n 1 -p "Press any key to continue" cont
-npm test
+(cd ExpoSE; npm test)
+(cd SPINExpose; ./expoSE test_suite)
