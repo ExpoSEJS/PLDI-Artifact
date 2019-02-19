@@ -53,20 +53,26 @@ To evaluate the claims made in the paper we provide a micro benchmark suite. The
 - `./run_spin_on_microbenchmarks`: Execute the microbenchmarks with ExpoSE as it was in SPIN 17
 - `./run_pldi_on_microbenchmarks`: Execute the microbenchmarks with ExpoSE as presented in our PLDI paper
 
-After each test suite has finished executing it will provide an error count. We recommend executing these scripts in the following order:
+After each test suite has finished executing it will provide an error count. We recommend executing the PLDI version of ExpoSE several times with the following configurations:
 
 ```
-./run_spin_on_microbenchmarks
 EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1 ./run_pldi_on_microbenchmarks
 EXPOSE_DISABLE_CAPTURE_GROUPS=1 ./run_pldi_on_microbenchmarks
 EXPOSE_DISABLE_REFINEMENTS=1 ./run_pldi_on_microbenchmarks
 ./run_pldi_on_microbenchmarks
 ```
 
+and then to execute the SPIN version of ExpoSE just once with
 
+```
+./run_spin_on_microbenchmarks
+```
+
+After executing each of the commands in this order you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented. Note: The SPIN submission fails test cases often due to creating superfluous paths.
 
 ### Executing on real libraries (with automated harness generation)
 
+We provide an automated test harness generator to test the approach on real JavaScript libraries. 
 
 ### Constructing your own test cases
 
