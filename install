@@ -14,7 +14,7 @@ rm -rf ./ExpoSE/
 git clone https://github.com/ExpoSEJS/ExpoSE.git
 
 echo "[+] Install SPIN ExpoSE (Legacy)"
-(cd SPINExpose; npm install)
+(cd SPIN; npm install)
 
 echo "[+] Installing ExpoSE"
 
@@ -25,4 +25,4 @@ echo "If any tests fail, please use the VM image"
 
 read -n 1 -p "Press any key to continue" cont
 (cd ExpoSE; npm test)
-(cd SPINExpose; ./expoSE test_suite)
+(cd SPIN; ./expoSE test_suite)

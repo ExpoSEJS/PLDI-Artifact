@@ -25,16 +25,14 @@ The install script will prepare ExpoSE as presented in our PLDI 19 paper and in 
 
 We have prepared a VirtualBox image running Ubuntu server with our environment already installed. Once the machine has finished booting the user details
 
-```
-username: test
-password: test
-```
+```username: test
+password: test```
 
-can be used to login to our sample user. From there the folder artifact (`$cd artifact`) will contain an exact copy of our artifact as it would be created by our installation script.
+can be used to login to our sample user. From there the folder artifact will contain an exact copy of our artifact as it would be created by our installation script.
 
 # General Usage
 
-In this section we describe how to use ExpoSE on simple programs (microbenchmarks) and on full npm libraries (using our automated harness generation tool).
+In this section we describe how to use ExpoSE on simple programs (microbenchmarks) and on full npm libraries (using our automated harness generation tool). The claims in our paper can be evaluated through execution of our microbenchmark suite and by execution of ExpoSE on real programs through an automated harness generator.
 
 ## Running ExpoSE
 
@@ -42,13 +40,23 @@ In this section we describe how to use ExpoSE on simple programs (microbenchmark
 
 In ExpoSE all of the features described in the paper are now enabled by default. Environment flags are used to disable the features and can be used to test the impact of a specific feature on program coverage. The feature flags are:
 
-- Disable regular expression support: Setting `$EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1` will disable regular expressions entirely, forcing concretization. 
-- Disable symbolic capture group support: Setting `$EXPOSE_DISABLE_CAPTURE_GROUPS=1` will disable symbolic modelling of the capture groups within regular expressions, but still generate paths for the regular expressions themselves.
-- Disable CEGAR refinement scheme: `$EXPOSE_DISABLE_REFINEMENTS=1` will disable the CEGAR scheme. If this is set then created paths will not be checked for correctness and analysis may be unsound.
+- Disable regular expression support: Setting `EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1 ...` will disable regular expressions entirely, forcing concretization. 
+- Disable symbolic capture group support: Setting `EXPOSE_DISABLE_CAPTURE_GROUPS=1 ...` will disable symbolic modelling of the capture groups within regular expressions, but still generate paths for the regular expressions themselves.
+- Disable CEGAR refinement scheme: `EXPOSE_DISABLE_REFINEMENTS=1 ...` will disable the CEGAR scheme. If this is set then created paths will not be checked for correctness and analysis may be unsound.
 
 ## Evaluating against micro benchmarks
 
+To evaluate the claims made in the paper we provide a micro benchmark suite. The two scripts for this are:
+
+- `./run_spin_on_microbenchmarks`: Execute the microbenchmarks with ExpoSE as it was in SPIN 17
+- `./run_pldi_on_microbenchmarks`: Execute the microbenchmarks with ExpoSE as presented in our PLDI paper
+
+After each test suite has finished executing it will provide an error 
+
 ## Executing on real libraries (with automated harness generation)
+
+
+## Constructing your own test cases
 
 # Repeating the experiments 
 
