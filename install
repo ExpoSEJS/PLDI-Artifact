@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+echo "NOTICE: Tested with"
+echo "node 8.15.0"
+echo "npm 6.4.1"
+echo "clang 3.8.0"
+echo "build-essential"
+
+read  -n 1 -p "Press any key to continue" cont
+
+printf "\n[+] Fetching ExpoSE\n"
+
+rm -rf ./ExpoSE/
+git clone https://github.com/ExpoSEJS/ExpoSE.git
+
+echo "[+] Installing ExpoSE"
+
+(cd ExpoSE; npm install)
+
+echo "Installed. Preparing to run unit tests."
+echo "If any tests fail, please use the VM image"
+
+read -n 1 -p "Press any key to continue" cont
+npm test

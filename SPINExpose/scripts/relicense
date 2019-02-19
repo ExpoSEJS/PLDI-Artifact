@@ -1,0 +1,4 @@
+#!/bin/bash
+grep -q '\/\*.*(c).*\*\/' $1 || echo "/* Copyright (c) Blake Loring | LICENSE.md for license details */
+
+$(cat $1)" > $1
