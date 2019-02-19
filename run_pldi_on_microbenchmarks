@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+cd ExpoSE
+
+unset RECOMPILE
+
+./scripts/build/build_all
+./scripts/build/build_tester
+
+if [ $? -ne 0 ]; then
+	exit 1
+fi
+
+node --version
+node ./Tester/bin/TestRunner.js ../microbenchmarks/ test_list
+
+exit $?
