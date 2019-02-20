@@ -1,0 +1,27 @@
+{
+  "name": "crawlr",
+  "version": "1.0.0",
+  "description": "./run modules_dir log_file",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "acorn": "5.5.3",
+    "blessed": "^0.1.81"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawline/crawlr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawline/crawlr/issues"
+  },
+  "homepage": "https://github.com/jawline/crawlr#readme"
+}

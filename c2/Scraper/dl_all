@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Sending to $1"
+curl "https://skimdb.npmjs.com/registry/_all_docs?include_docs=true&update_seq=true" > $1

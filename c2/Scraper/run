@@ -1,0 +1,3 @@
+#!/bin/bash
+export NODE_PATH=../
+node --max-old-space-size=8096 src/main.js database.json

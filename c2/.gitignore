@@ -1,0 +1,9 @@
+node_modules/
+mods/
+database.json
+*.html
+*.html.raw
+out
+real_out
+out_test
+*.dat
