@@ -16,10 +16,18 @@ The following libraries are required for ExpoSE to install properly. We have tes
 - Npm 6.4.1 (as npm in $PATH)
 - clang (tested with 3.7)
 - make
+- git
 
 ### Installation
 
-A Git repository containing the installation script is available The install script will prepare both versions of ExpoSE. It will also prepare a set of sample libraries to test the tool against. To install execute `$ ./install` on a system once all dependencies are installed. If installation is successful then all test cases should pass.
+A Git repository containing the installation script is available at https://github.com/ExpoSEJS/PLDI-Artifact. The install script will prepare both versions of ExpoSE. It will also prepare a set of sample libraries to test the tool against. To install execute `$ ./install` on a system once all dependencies are installed. If installation is successful then all test cases should pass.
+
+On most systems installation should be:
+```
+git clone https://github.com/ExpoSEJS/PLDI-Artifact.git
+cd PLDI-Artifact
+./install
+```
 
 ### Virtual Machine Image
 
