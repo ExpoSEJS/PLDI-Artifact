@@ -74,20 +74,13 @@ To evaluate the claims made in the paper we provide a micro benchmark suite. The
 
 After each test suite has finished executing it will provide an error count. We recommend executing the PLDI version of ExpoSE several times with the following configurations:
 
-```
-EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1 ./run_pldi_on_microbenchmarks
-EXPOSE_DISABLE_CAPTURE_GROUPS=1 ./run_pldi_on_microbenchmarks
-EXPOSE_DISABLE_REFINEMENTS=1 ./run_pldi_on_microbenchmarks
-./run_pldi_on_microbenchmarks
-```
+- `EXPOSE_DISABLE_REGULAR_EXPRESSIONS=1 ./run_pldi_on_microbenchmarks`: Execute ExpoSE with no support for regular expressions. 
+- `EXPOSE_DISABLE_CAPTURE_GROUPS=1 ./run_pldi_on_microbenchmarks`: Execute ExpoSE with support for all regular expression features except capture groups.
+- `EXPOSE_DISABLE_REFINEMENTS=1 ./run_pldi_on_microbenchmarks`: Execute ExpoSE with all features but no CEGAR refinement loop (Note: In this mode ExpoSE may produce different errors with each execution of the tests due to nondeterminism).
+- `./run_pldi_on_microbenchmarks`: Execute ExpoSE with all features.
+- `./run_spin_on_microbenchmarks`: Execute the legacy version of ExpoSE with limited support for regular expressions.
 
-and then to execute the SPIN version of ExpoSE just once with
-
-```
-./run_spin_on_microbenchmarks
-```
-
-After executing each of the commands in this order you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented. Note: The SPIN submission fails many test cases due to a small error in the model creating many superfluous paths.
+After executing each of these commands you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented. Note: The SPIN submission performs more poorly than the new version of ExpoSE with capture groups enabled due to support for other features such as assertions, search, replace and split.
 
 ### Executing on real libraries (with automated harness generation)
 
