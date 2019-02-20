@@ -42,11 +42,7 @@ password: test
 
 can be used to login to our sample user. From there the folder artifact will contain an exact copy of our artifact as it would be created by our installation script.
 
-## General Usage
-
-In this section we first describe how to launch our regular expression crawler. Next, we show how to use ExpoSE on simple programs (microbenchmarks) and on full npm libraries (using our automated harness generation tool). Finally, we detail how you can construct your own symbolic test case and then analyze it with ExpoSE. The claims in our paper can be evaluated through execution of our microbenchmark suite and by execution of ExpoSE on real programs through an automated harness generator. 
-
-### The Regular Expression Crawler
+## The Regular Expression Crawler
 
 In the paper we present a survey of regular expressions. We have included the crawler for this, in addition to a set of pre packaged libraries, so that it can be tested. Running the command `./run_small_regex_crawl` should launch a crawler. The crawler will present a screen with information on each of the packages it has processed in real time as it operates (It should be very quick on the small sample of packages we have provided). A complete list of each regular expression found will be added to the file OutputCrawl file in the same directory. Output lines are formatted JSON and look like:
 ```
@@ -56,6 +52,10 @@ In the paper we present a survey of regular expressions. We have included the cr
 The regex field specifies the full source of the regular expression with the flags field containing the flags it was to be executed with. The cmod field contains the package the regular expression was identified in and the cfile field marks which file within that package.
 
 To test a custom package you can add it to the SampleCrawlerPackages directory, where it will be automatically picked up when the crawler is launched.  
+
+## Evaluating ExpoSE
+
+In this section we show how to use ExpoSE on simple programs (microbenchmarks) and on full npm libraries (using our automated harness generation tool). Finally, we detail how you can construct your own symbolic test case and then analyze it with ExpoSE. The claims in our paper can be evaluated through execution of our microbenchmark suite and by execution of ExpoSE on real programs through an automated harness generator. 
 
 ### Testing Each Feature
 
