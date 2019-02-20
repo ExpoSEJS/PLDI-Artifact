@@ -2,6 +2,8 @@
 
 cd SPIN
 
+RECOMPILE=1 ./expoSE test ./tests/integers/infoflow
+
 #!/bin/bash -e
 ./scripts/build/build_tester
 
