@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./ExpoSE/expoSE $1
+./PLDI/expoSE $1

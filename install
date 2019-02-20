@@ -10,19 +10,21 @@ read  -n 1 -p "Press any key to continue" cont
 
 printf "\n[+] Fetching ExpoSE (PLDI)\n"
 
-rm -rf ./ExpoSE/
-git clone https://github.com/ExpoSEJS/ExpoSE.git
+rm -rf ./PLDI/
+git clone https://github.com/ExpoSEJS/ExpoSE.git PLDI
 
-echo "[+] Install SPIN ExpoSE (Legacy)"
+echo "[+] Setup Crawlr"
+(cd crawlr; npm install)
+
+echo "[+] Setup ExpoSE (Legacy)"
 (cd SPIN; npm install)
 
-echo "[+] Installing ExpoSE"
-
-(cd ExpoSE; npm install)
+echo "[+] Setup PLDI ExpoSE"
+(cd PLDI; npm install)
 
 echo "Installed. Preparing to run unit tests."
 echo "If any tests fail, please use the VM image"
 
 read -n 1 -p "Press any key to continue" cont
-(cd ExpoSE; npm test)
+(cd PLDI; npm test)
 (cd SPIN; ./expoSE test_suite)

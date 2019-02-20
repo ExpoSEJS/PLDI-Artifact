@@ -6,7 +6,7 @@ This artifact submission accompanies our PLDI 2019 paper. We include an automati
 
 ## Getting Started
 
-This section covers setting up an environment with ExpoSE as presented in our PLDI paper and ExpoSE as presented at SPIN 2017. We provide both a VirtualBox image and installation script. The following instructions are for direct installation via the script. If using a virtual machine then skip to Virtual Machine Image heading in getting started.
+In order to evaluate the contributions made in the paper we require two versions of ExpoSE, one including our modifications. This section covers setting up an environment with ExpoSE as presented in our PLDI paper and the original version. We provide both a VirtualBox image and installation script. The following instructions are for direct installation via the script. If using a virtual machine then skip to Virtual Machine Image heading in getting started.
 
 ### System Requirements
 
@@ -19,7 +19,7 @@ The following libraries are required for ExpoSE to install properly. We have tes
 
 ### Installation
 
-The install script will prepare ExpoSE as presented in our PLDI 19 paper and in our SPIN 17 submission. It will also prepare a set of sample libraries to test the tool against. To install execute `$ ./install` on a system once all dependencies are installed. 
+A Git repository containing the installation script is available The install script will prepare both versions of ExpoSE. It will also prepare a set of sample libraries to test the tool against. To install execute `$ ./install` on a system once all dependencies are installed. If installation is successful then all test cases should pass.
 
 ### Virtual Machine Image
 
@@ -37,6 +37,10 @@ can be used to login to our sample user. From there the folder artifact will con
 ## General Usage
 
 In this section we describe how to use ExpoSE on simple programs (microbenchmarks) and on full npm libraries (using our automated harness generation tool). The claims in our paper can be evaluated through execution of our microbenchmark suite and by execution of ExpoSE on real programs through an automated harness generator. 
+
+### Testing the package crawler 
+
+In the paper we present a survey of regular expressions. We have included the crawler for this, in addition to a set of pre packaged libraries, so that it can be tested. Running the command `./run_small_regex_crawl` should launch a crawler. This crawler can be closed by pressing Q. 
 
 ### Testing Each Feature
 

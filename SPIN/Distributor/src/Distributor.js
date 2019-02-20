@@ -88,7 +88,6 @@ if (process.argv.length >= 3) {
 
         console.log('** ExpoSE Finished. ' + done.length + ' paths with ' + errors + ' errors **');
         process.exitCode = errors;
-        process.exit(0);
     }).start(target);
 } else {
     console.log('Wrong number of arguments');
