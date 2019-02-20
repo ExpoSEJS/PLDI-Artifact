@@ -31,3 +31,4 @@ package-lock.json
 .vscode/settings.json
 *.swp
 cache/
+OutputCrawl
