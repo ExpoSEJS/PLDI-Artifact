@@ -97,11 +97,39 @@ Note: Error counts from automated harnesses should be ignored. As we do not know
 
 ### Constructing your own test cases
 
-We now detail how to construct your own test cases. The two scripts:
-- `./run_automatic_harness_pldi LIBRARY_NAME`: Execute an automated harness with the new version of ExpoSE.
-- `./run_automatic_harness_spin LIBRARY_NAME`: Execute an automated harness with the legacy version of ExpoSE.
+We now detail how to construct your own test cases. Two more scripts are used for this:
+- `./run_script_pldi LIBRARY_NAME`: Execute a Node.js program with the new version of ExpoSE.
+- `./run_script_spin LIBRARY_NAME`: Execute a Node.js with the legacy version of ExpoSE.
 
- 
+To execute a script with ExpoSE we need to first mark some variables as symbolic. Imagine we want to test the simple program:
+```
+var emailAddress = input();
+
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)) {
+  throw 'This is an email address!';
+}
+```
+
+We first import a hidden library, `S$`, which contains helper methods for constructing symbols.
+
+```
+var S$ = require('S$');
+```
+
+Next, we use the method `S$.symbol(Symbol Name, Initial Seed)` to construct a new symbol. Note that the initial seed input defines the type of the symbolic variable.#
+```
+var emailAddress = S$.symbol('Email Address', 'hello world');
+```
+
+Putting that all together we get the program:
+````
+var S$ = require('S$');
+var emailAddress = S$.symbol('Email Address', 'hello world');
+
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)) {
+  throw 'This is an email address!';
+}
+```
 
 
 
