@@ -48,7 +48,12 @@ In this section we first describe how to launch our regular expression crawler. 
 
 ### The Regular Expression Crawler
 
-In the paper we present a survey of regular expressions. We have included the crawler for this, in addition to a set of pre packaged libraries, so that it can be tested. Running the command `./run_small_regex_crawl` should launch a crawler. The crawler will present a screen with information on each of the packages it has processed in real time as it operates (It should be very quick on the small sample of packages we have provided). A complete list of each regular expression found will be added to the file OutputCrawl file in the same directory.
+In the paper we present a survey of regular expressions. We have included the crawler for this, in addition to a set of pre packaged libraries, so that it can be tested. Running the command `./run_small_regex_crawl` should launch a crawler. The crawler will present a screen with information on each of the packages it has processed in real time as it operates (It should be very quick on the small sample of packages we have provided). A complete list of each regular expression found will be added to the file OutputCrawl file in the same directory. Output lines are formatted JSON and look like:
+```
+{"tag":"regex","regex":"Z|[+-]\\d\\d(?::?\\d\\d)?","cmod":"../SampleCrawlerPackages//moment-develop","cfile":"../SampleCrawlerPackages//moment-develop/src/lib/parse/regex.js","flags":"gi","v":{"pattern":"Z|[+-]\\d\\d(?::?\\d\\d)?","flags":"gi","value":{}}}
+```
+
+The regex field specifies the full source of the regular expression with the flags field containing the flags it was to be executed with. The cmod field contains the package the regular expression was identified in and the cfile field marks which file within that package.
 
 To test a custom package you can add it to the SampleCrawlerPackages directory, where it will be automatically picked up when the crawler is launched.  
 
@@ -82,7 +87,7 @@ and then to execute the SPIN version of ExpoSE just once with
 ./run_spin_on_microbenchmarks
 ```
 
-After executing each of the commands in this order you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented. Note: The SPIN submission fails test cases often due to creating superfluous paths.
+After executing each of the commands in this order you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented. Note: The SPIN submission fails many test cases due to a small error in the model creating many superfluous paths.
 
 ### Executing on real libraries (with automated harness generation)
 
