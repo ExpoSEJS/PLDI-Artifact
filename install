@@ -22,6 +22,9 @@ echo "[+] Setup ExpoSE (Legacy)"
 echo "[+] Setup PLDI ExpoSE"
 (cd PLDI; npm install)
 
+echo "[+] Setup Feature Tester"
+(cd FeatureTester; npm install)
+
 echo "Installed. Preparing to run unit tests."
 echo "If any tests fail, please use the VM image"
 

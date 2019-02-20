@@ -1,0 +1,1 @@
+(mkdir -p $1 && cd $1 && npm install $1 && expoSE ahg $1)

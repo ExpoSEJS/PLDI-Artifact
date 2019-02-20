@@ -1,0 +1,24 @@
+{
+  "name": "workit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "dependencies": {
+    "acorn": "^5.0.3",
+    "blessed": "^0.1.81",
+    "bower": "^1.8.0",
+    "cordova": "^6.5.0",
+    "grunt-cli": "^1.2.0",
+    "jetty": "^0.2.1",
+    "line-by-line": "^0.1.5",
+    "minimist": "^1.2.0",
+    "npm": "^4.4.4",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
