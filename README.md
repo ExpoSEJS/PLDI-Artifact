@@ -1,4 +1,4 @@
-# "Sound Regular Expression Semantics for Dynamic Symbolic Execution of JavaScript" Artifact Evaluation
+# "Sound Regular Expression Semantics for Dynamic Symbolic Execution of JavaScript" PLDI 2019 Paper#678 Artifact Evaluation
   
 The central contribution of this paper is a modification to the ExpoSE symbolic execution engine adding support for complex JavaScript regular expressions. The support for these regular expressions will often lead to better program analysis in JavaScript applications as the feature is highly utilized. A core part of this support is the introduction of a CEGAR loop on top of the solver which can make small corrections to SMT problems to account for incorrect matching precedence.
 
@@ -84,9 +84,26 @@ After executing each of these commands you should see the number of failing test
 
 ### Executing on real libraries (with automated harness generation)
 
-We provide an automated test harness generator to test the approach on real JavaScript libraries. 
+We provide an automated test harness generator to test the approach on real JavaScript libraries. This facility is provided through two scripts:
+
+- `./run_automatic_harness_pldi LIBRARY_NAME`: Execute an automated harness with the new version of ExpoSE.
+- `./run_automatic_harness_spin LIBRARY_NAME`: Execute an automated harness with the legacy version of ExpoSE.
+
+Each of these scripts will automatically fetch a specified library from NPM and then attempt to execute it using an automatically generated harness.
+
+TODO: Insert sample run here
+
+Note: Error counts from automated harnesses should be ignored. As we do not know the expected type signatures of library methods we attempt to explore them through systematic type enumeration. This creates a large number of test cases which fail due to uncaught thrown exceptions.
 
 ### Constructing your own test cases
+
+We now detail how to construct your own test cases. The two scripts:
+- `./run_automatic_harness_pldi LIBRARY_NAME`: Execute an automated harness with the new version of ExpoSE.
+- `./run_automatic_harness_spin LIBRARY_NAME`: Execute an automated harness with the legacy version of ExpoSE.
+
+ 
+
+
 
 ## Repeating all experiments 
 

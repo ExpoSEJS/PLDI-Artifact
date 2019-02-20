@@ -1,5 +1,5 @@
 // Require your NPM library
-var target = require(process.env['EXPOSE_HARNESS_TARGET');
+var target = require(process.env['EXPOSE_HARNESS_TARGET']);
 
 /**
  * Expands an object/function to explore all properties
