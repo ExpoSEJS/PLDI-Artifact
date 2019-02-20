@@ -98,8 +98,8 @@ Note: Error counts from automated harnesses should be ignored. As we do not know
 ### Constructing your own test cases
 
 We now detail how to construct your own test cases. Two more scripts are used for this:
-- `./run_script_pldi LIBRARY_NAME`: Execute a Node.js program with the new version of ExpoSE.
-- `./run_script_spin LIBRARY_NAME`: Execute a Node.js with the legacy version of ExpoSE.
+- `./run_script_pldi FILE_NAME`: Execute a Node.js program with the new version of ExpoSE.
+- `./run_script_spin FILE_NAME`: Execute a Node.js with the legacy version of ExpoSE.
 
 To execute a script with ExpoSE we need to first mark some variables as symbolic. Imagine we want to test the simple program:
 ```
