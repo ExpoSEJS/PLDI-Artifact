@@ -122,7 +122,7 @@ var emailAddress = S$.symbol('Email Address', 'hello world');
 ```
 
 Putting that all together we get the program:
-````
+```
 var S$ = require('S$');
 var emailAddress = S$.symbol('Email Address', 'hello world');
 
