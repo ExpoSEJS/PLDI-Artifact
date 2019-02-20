@@ -82,19 +82,6 @@ After each test suite has finished executing it will provide an error count. We 
 
 After executing each of these commands you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented. Note: The SPIN submission performs more poorly than the new version of ExpoSE with capture groups enabled due to support for other features such as assertions, search, replace and split.
 
-### Executing on real libraries (with automated harness generation)
-
-We provide an automated test harness generator to test the approach on real JavaScript libraries. This facility is provided through two scripts:
-
-- `./run_automatic_harness_pldi LIBRARY_NAME`: Execute an automated harness with the new version of ExpoSE.
-- `./run_automatic_harness_spin LIBRARY_NAME`: Execute an automated harness with the legacy version of ExpoSE.
-
-Each of these scripts will automatically fetch a specified library from NPM and then attempt to execute it using an automatically generated harness.
-
-TODO: Insert sample run here
-
-Note: Error counts from automated harnesses should be ignored. As we do not know the expected type signatures of library methods we attempt to explore them through systematic type enumeration. This creates a large number of test cases which fail due to uncaught thrown exceptions.
-
 ### Constructing your own test cases
 
 We now detail how to construct your own test cases. Two more scripts are used for this:
@@ -141,6 +128,21 @@ Executing this with `./run_script_pldi ./example_script.js` we should get output
 
 The [+] lines here indicate test case inputs, and the [!] indicates an uncaught exception.
 
+
+
+### Executing on real libraries (with automated harness generation)
+
+We provide an automated test harness generator to test the approach on real JavaScript libraries. This facility is provided through two scripts:
+
+- `./run_automatic_harness_pldi LIBRARY_NAME`: Execute an automated harness with the new version of ExpoSE.
+- `./run_automatic_harness_spin LIBRARY_NAME`: Execute an automated harness with the legacy version of ExpoSE.
+
+Each of these scripts will automatically fetch a specified library from NPM and then attempt to execute it using an automatically generated harness.
+
+TODO: Insert sample run here
+
+Note: Error counts from automated harnesses should be ignored. As we do not know the expected type signatures of library methods we attempt to explore them through systematic type enumeration. This creates a large number of test cases which fail due to uncaught thrown exceptions.
+
 ## Repeating all experiments 
 
-The experiments from the paper take a significant amount of time to run. As each library needs to be re-executed 4 times (once for each of the features tested). Run on a single machine the experiments may take several months to complete.
+The experiments from the paper take a significant amount of time to run as each library needs to be re-executed 4 times (once for each of the features tested) and takes roughly an hour to execute each time. Running on a single machine the experiments may take several months to complete. If recreating the experiments we strongly recommend not using a virtual machine, as the decreased performance may reduce program coverage.
