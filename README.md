@@ -57,7 +57,7 @@ somewhere in there output, corresponding to the tests of each version of ExpoSE.
 
 ### Virtual Machine Image
 
-We have prepared a VirtualBox image running Ubuntu server with the artifact pre-installed. The VirtualBox image is available [TODO: HERE].
+We have prepared a VirtualBox image running Ubuntu server with the artifact pre-installed. The VirtualBox image is available at https://drive.google.com/drive/folders/1iFnHtxeTLuWGYS5qJAfZgkTeFS-6tfFu?usp=sharing.
 
 Once the machine has finished booting the user details
 
