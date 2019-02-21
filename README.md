@@ -170,7 +170,7 @@ Executing this with `./run_script_pldi ./example_script.js` we will get output l
 [!] expoSE replay '/home/artifact/example_script.js' '{"Email Address":"_Y@3.P8","_bound":21}'
 ```
 
-The [+] lines here indicate test case inputs, and the [!] indicates an uncaught exception.
+The [+] lines here indicate test case inputs, and the [!] indicates an uncaught exception (triggered by our throw!).
 
 ### Executing on real libraries (with automated harness generation)
 
@@ -181,9 +181,9 @@ We provide an automated test harness generator to test the engine on real JavaSc
 
 Each of these scripts will automatically fetch a specified library from NPM and then attempt to execute it using an automatically generated harness.
 
-For example, in order to test the npm package [TODO], run the following command:
+For example, in order to test the npm package minimist with the new version of ExpoSE, run the following command:
 ```
-TODO
+./run_automatic_harness_pldi minimist
 ```
 You should get the following output:
 ```
