@@ -1,1 +1,1 @@
-(mkdir -p $1 && cd $1 && npm install $1 && EXPOSE_MAX_TIME=1h ../../PLDI/expoSE ahg $1)
+(mkdir -p $1 && cd $1 && npm install $1 && EXPOSE_MAX_TIME=2m ../../PLDI/expoSE ahg $1)
