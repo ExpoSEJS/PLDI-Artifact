@@ -87,7 +87,7 @@ Each field is described as follows:
 - The `flags` field contains the flags the regular expression was executed with
 - The `cmod` field contains the package the regular expression was identified in
 - The `cfile` field marks which file within the package the regular expression is contained within
-- The `v` field contains [TODO]
+- The `v` field contains debugging information and can be ignored
 
 To analyze regular expression usage in a custom package:
 - Add the desired package to the `SampleCrawlerPackages` directory
