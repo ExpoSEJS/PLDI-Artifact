@@ -185,11 +185,35 @@ For example, in order to test the npm package minimist with the new version of E
 ```
 ./run_automatic_harness_pldi minimist
 ```
-You should get the following output:
+As before each test case and exception will be added to stdout, for example the following is a test case which failed because of an lookup on the field `length`:
 ```
-TODO
+[+] {"ExpandSwitch":false,"Constructed_Argument_t":"array_string","Constructed_Argument":["--\u0004\n\u0000"],"Constructed_Argument_2_t":"","CreateAsClass":false,"ExpandObjSwitcher":0,"_bound":46} took 0.0171s
+[!] TypeError: Cannot read property 'length' of undefined
+[!] expoSE replay '../lib/Harness/src/harness.js' '{"ExpandSwitch":false,"Constructed_Argument_t":"array_string","Constructed_Argument":["--\u0004\n\u0000"],"Constructed_Argument_2_t":"","CreateAsClass":false,"ExpandObjSwitcher":0,"_bound":46}'
 ```
-which can be interpreted as [TODO].
+Additionally, the output will contain statistics on how many queries and regular expression have been treated. These will look like:
+```
+[+] General Function Call: 4955
+[+] Symbolic Values: 1470
+[+] Symbolic Primitives: 1274
+[+] Pure Symbols: 781
+[+] Wrapped Constants: 5157
+[+] Symbolic Binary: 4866
+[+] Modeled Function Call: {"push":1597,"apply":169,"concat":418,"filter":363,"forEach":812,"test":7689,"split":52,"indexOf":23,"match":12,"slice":7}
+[+] Max Queries (Any): 21
+[+] Max Queries (Succesful): 21
+[+] Symbolic Field: 239
+[+] Symbolic Object Field Lookups: 443
+[+] Symbolic Unary: 82
+[+] Symbolic Arrays: 61
+[+] Failed Queries: 53
+[+] Regex Encoded: 195
+[+] Regex Which May Need Checks: 195
+[+] Regex Checks: 544
+[+] Failed Regex Checks: 100
+[+] Concretized Function Calls: {"slice":2,"Number":5}
+```
+This tells us that in this execution 195 regular expressions are encountered, triggering 544 CEGAR checks, 100 of which required further refinement.
 
 Note: Error counts from automated harnesses should be ignored. As we do not know the expected type signatures of library methods we attempt to explore them through systematic type enumeration. This creates a large number of test cases which fail due to uncaught thrown exceptions.
 
