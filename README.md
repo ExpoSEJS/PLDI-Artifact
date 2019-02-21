@@ -197,14 +197,14 @@ Note: Error counts from automated harnesses should be ignored. As we do not know
 
 In Table 8 we describe the solver time statistics for packages and queries. In order to generate per-path query statistics the `EXPOSE_QUERY_DUMP="directory path"` environment variable must be set. For example, if we run:
 ```
-EXPOSE_QUERY_DUMP="~/expose_query_timings/" ./run_automatic_harness_pldi minimist
+mkdir ~/expose_query_info/; EXPOSE_QUERY_DUMP=~/expose_query_info/ ./run_automatic_harness_pldi minimist
 ```
 
-After analysis has finished executed some paths, running `ls ~/expose_query_timings` should display a set of files. Inside each of these files contains a set of JSON encoded information about query statistics for a given path. We have included a tool to interpret these results. Running:
+After analysis has finished executed some paths, running `ls ~/expose_query_info` should display a set of files. Inside each of these files contains a set of JSON encoded information about query statistics for a given path. We have included a tool to interpret these results. Running:
 ```
-node ./summarize_dump.js ~/expose_query_timings
+node ./summarize_dump.js ~/expose_query_info/
 ```
-will give summarized information about all queries in the path. As these query directories are not cleaned up automatically between executions it is important to clear it (`rm -rf ~/expose_query_timings`) between executions.
+will give summarized information about all queries in the path. As these query directories are not cleaned up automatically between executions it is important to clear it (`rm ~/expose_query_info/*`) between executions.
 
 Note: Query statistics are only supported on the new version of ExpoSE and the legacy version will ignore the flag.
 
