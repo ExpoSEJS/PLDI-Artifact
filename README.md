@@ -184,7 +184,7 @@ For example, in order to test the npm package minimist with the new version of E
 ```
 ./run_automatic_harness_pldi minimist
 ```
-As before each test case and exception will be added to stdout, for example the following is a test case which failed because of an lookup on the field `length`:
+As before each test case and exception will be added to the program output after execution, for example the following is a test case which failed because of an lookup on the field `length`:
 ```
 [+] {"ExpandSwitch":false,"Constructed_Argument_t":"array_string","Constructed_Argument":["--\u0004\n\u0000"],"Constructed_Argument_2_t":"","CreateAsClass":false,"ExpandObjSwitcher":0,"_bound":46} took 0.0171s
 [!] TypeError: Cannot read property 'length' of undefined
