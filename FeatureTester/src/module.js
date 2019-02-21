@@ -23,7 +23,7 @@ function DecideCoverage(filepath, cb) {
         });
 
         run.on('exit', () => {
-            const re_cov = /^Total Coverage: ([0-9]+\.[0-9]+)%$/m;
+            const re_cov = /Total Coverage: ([0-9]+\.[0-9]+)%$/m;
             const matched_cov = re_cov.exec(out);
             if (matched_cov) {
                 console.log(JSON.stringify(matched_cov));
