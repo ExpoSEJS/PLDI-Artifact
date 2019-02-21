@@ -53,7 +53,7 @@ and
 *        0 errors        *
 **************************
 ```
-somewhere in there output, corresponding to the tests of each version of ExpoSE.
+somewhere in there output, corresponding to the tests of each version of ExpoSE. On some systems test cases may raise a warning because they take more than 60s to finish, this does not mean that an error has occurred.
 
 ### Virtual Machine Image
 
@@ -76,7 +76,7 @@ Run the command
 ```
 ./run_small_regex_crawl
 ```
-to launch the crawler. In real-time, this will give information on each package as it processes them. This should be very quick on the small sample of packages we have provided.
+to launch the crawler. In real-time, this will give information on each package as it processes them. This should be very quick on the small sample of packages we have provided. The crawler may raise some parsing errors. These are normal, and occur when files look like JavaScript but Acorn cannot correctly parse them. In these cases we progress as far as we can through a fail before discarding the rest.
 
 A complete list of regular expressions found will be added to the file `OutputCrawl` in the same directory. Output lines are formatted JSON, an example of which is:
 ```
