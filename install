@@ -14,7 +14,7 @@ printf "\n[+] Fetching ExpoSE (PLDI)\n"
 
 rm -rf ./PLDI/
 git clone https://github.com/ExpoSEJS/ExpoSE.git PLDI
-git checkout 89e72c60328fa29ecaae87c9541a0d1b0fb243d5
+git checkout 94f9be9f8c81fea31ede419545add17594f62464
 
 echo "[+] Setup Crawlr"
 (cd crawlr; npm install)

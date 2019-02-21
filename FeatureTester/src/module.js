@@ -9,31 +9,15 @@ const TARGET_SCRIPT = './test';
 const SECONDS = 1000;
 const MINUTES = SECONDS * 60;
 
-function DecideCoverage(filepath, cb) {
-    //Delay decidecoverage for 5s (might fix 0-cov when file exists bug)
-    setTimeout(function() {
-        let out = '';
-
-        let run = fork('./cov.js', [filepath], {
-            silent: true
-        });
-
-        run.stdout.on('data', data => {
-            out += data;
-        });
-
-        run.on('exit', () => {
-            const re_cov = /Total Coverage: ([0-9]+\.[0-9]+)%$/m;
-            const matched_cov = re_cov.exec(out);
-            if (matched_cov) {
-                console.log(JSON.stringify(matched_cov));
-                cb(null, matched_cov[1]);
-            } else {
-                cb('Error! could not match coverage with ' + out);
-            }
-        });
-
-    }, 5000);
+function DecideCoverage(text, cb) {
+    const re_cov = /Total Coverage: ([0-9]+(.[0-9]+)?)%$/m;
+    const matched_cov = re_cov.exec(text);
+    if (matched_cov) {
+        console.log(JSON.stringify(matched_cov));
+        cb(null, matched_cov[1]);
+    } else {
+        cb('Error! could not match coverage with ' + text);
+    }
 }
 
 function RunCov(target, envChange, done) {
@@ -52,13 +36,15 @@ function RunCov(target, envChange, done) {
         env: newEnv
     });
 
+    let outData = '';
+
     run.stdout.on('data', data => {
-        console.log('' + data);
+        outData += ('' + data);
     });
 
     run.on('exit', () => {
         console.log('Done');
-        DecideCoverage('./json_outs/' + target + newEnv['TESTMODE'], function(err, coverage) {
+        DecideCoverage(outData, function(err, coverage) {
             if (err) {
                 console.log(err);
                 done(0);
@@ -83,7 +69,6 @@ module.exports = function(target, log, done) {
     RunCov(target, 'ALL', function(coverage_final, r, err) {
         logErr(log, target, err);
         log.out('DONE:' + target + ' ' + '0' + ' ' + '0' + ' ' + '0' + ' ' + coverage_final);
-        done();
         RunCov(target, 'DISABLE_REGULAR_EXPRESSIONS', function(coverage_no_re, r, err) {
             logErr(log, target, err);
             if (coverage_final - coverage_no_re != 0) {

@@ -26,7 +26,7 @@ The following libraries are required for ExpoSE to install properly. We have tes
 
 ### Installation
 
-A Git repository containing the installation script is available at https://github.com/ExpoSEJS/PLDI-Artifact. The install script will prepare both versions of ExpoSE. It will also prepare a set of sample libraries to test the tool against. To install execute `$ ./install` on a system once all dependencies are installed. If installation is successful then all test cases should pass.
+A Git repository containing the installation script is available at https://github.com/ExpoSEJS/PLDI-Artifact. The install script will prepare both versions of ExpoSE. It will also prepare a set of sample libraries to test the tool against. To install execute `./install` on a system once all dependencies are installed. If installation is successful then all test cases should pass.
 
 On most systems installation should be:
 ```
@@ -248,3 +248,10 @@ Note: Query statistics are only supported on the new version of ExpoSE and the l
 ## Repeating all experiments 
 
 The experiments from the paper take a significant amount of time to run as each library needs to be re-executed 4 times (once for each of the features tested) and takes roughly an hour to execute each time. Running on a single machine the experiments may take several months to complete. If recreating the experiments we strongly recommend not using a virtual machine, as the decreased performance may reduce program coverage.
+
+To launch the experiments run:
+```
+./run_full_experiment
+```
+
+After each library finishes the result will be placed in Targets/out.
