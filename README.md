@@ -254,4 +254,4 @@ To launch the experiments run:
 ./run_full_experiment
 ```
 
-After each library finishes the result will be placed in Targets/out.
+After each library finishes the result will be placed in `Targets/out`.
