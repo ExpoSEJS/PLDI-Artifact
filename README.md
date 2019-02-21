@@ -204,7 +204,20 @@ After analysis has finished executed some paths, running `ls ~/expose_query_info
 ```
 node ./summarize_dump.js ~/expose_query_info/
 ```
-will give summarized information about all queries in the path. As these query directories are not cleaned up automatically between executions it is important to clear it (`rm ~/expose_query_info/*`) between executions.
+will give summarized information about all queries in the path. It should look something like:
+```
+Queries took an average of 397ms (total time in solver 494447ms) (total queries 1245)
+1201 / 1245 (96.5%) queries failed (unknown/unsat)
+0 (0%) queries failed (unknown result) because max refinements was hit.
+1291 attempts in 1245 queries (103.5%)
+Max attempts: 22
+Max attempts (with SAT): 22
+CEGAR-potential queries: 67
+CEGAR-using quries: 14
+0% CEGAR uses hit max-limit
+67 queries contained at least one RE
+```
+which gives detailed information about how many queries used CEGAR, how many queries hit the refinement limit, what the increased SMT query overhead has been from the CEGAR scheme (in this case 103%). It also lists how much time has been spent in the solver per query and in total. Note that failed queries are due to unsatisfiability or solver timeouts, and that the number of CEGAR queries that hit the max limit refers to the refinement limit in our paper. As these query directories are not cleaned up automatically between executions it is important to clear it (`rm ~/expose_query_info/*`) between executions.
 
 Note: Query statistics are only supported on the new version of ExpoSE and the legacy version will ignore the flag.
 
