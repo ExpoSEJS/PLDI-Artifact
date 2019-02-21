@@ -121,7 +121,7 @@ After each test suite has finished executing it will provide an error count. We 
 - `EXPOSE_DISABLE_CAPTURE_GROUPS=1 ./run_pldi_on_microbenchmarks`: Execute ExpoSE with support for all regular expression features except capture groups.
 - `EXPOSE_DISABLE_REFINEMENTS=1 ./run_pldi_on_microbenchmarks`: Execute ExpoSE with all features but no CEGAR refinement loop (Note: In this mode ExpoSE may produce different errors with each execution of the tests due to nondeterminism).
 - `./run_pldi_on_microbenchmarks`: Execute ExpoSE with all features.
-- `./run_spin_on_microbenchmarks`: Execute the legacy version of ExpoSE with limited support for regular expressions [24].
+- `./run_spin_on_microbenchmarks`: Execute the legacy version of ExpoSE with limited support for regular expressions [24]. Some of the microbenchmarks cause this legacy version of ExpoSE to hang inside the SMT solver.
 
 After executing each of these commands you should see the number of failing test cases decrease corresponding to the increased support. The test suite has cases for the regular expression methods match, split, exec, search and test and tests a variety of language features, including cases that are likely to fail if operator matching precedence is not correctly represented.
 

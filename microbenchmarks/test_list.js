@@ -18,7 +18,6 @@ function buildTestList() {
      * Core language tests
      */
     buildTest('regex/core/alternation/simple.js', 4, 4);
-    buildTest('regex/core/alternation/many.js', 4, 4);
     buildTest('regex/core/alternation/words.js', 4, 4);
     buildTest('regex/core/alternation/exhaustive_simple.js', 5, 5);
     buildTest('regex/core/alternation/multiple_related.js', 7, 7);
@@ -30,7 +29,6 @@ function buildTestList() {
     buildTest('regex/core/literals/empty_example.js', 2, 2);
     buildTest('regex/core/literals/mixed_escaped.js', 3, 3); //TODO: Should this be 2 */
     buildTest('regex/core/literals/non_alpha.js', 2, 2);
-    buildTest('regex/core/literals/multiple.js', 4, 4);
 
     /**
     *    TODO: Find out of unicode support is possible through some screwing with Z3 strings
@@ -54,7 +52,6 @@ function buildTestList() {
     buildTest('regex/core/plus/lazy.js', 12, 11);
 
     buildTest('regex/core/plus/online.js', 11, 10);
-    buildTest('regex/core/plus/multiple.js', 4, 4);
 
     buildTest('regex/core/loops/fixed_loop.js', 3, 2);
     buildTest('regex/core/loops/between_loop.js', 9, 8);
@@ -89,7 +86,6 @@ function buildTestList() {
      * Assertion Tests
      */
 
-    buildTest('regex/assertions/ahead.js', 1, 0);
     buildTest('regex/assertions/ahead_2.js', 2, 1);
     buildTest('regex/assertions/ahead_3.js', 2, 1);
     buildTest('regex/assertions/ahead_4.js', 4, 3);
@@ -157,7 +153,6 @@ function buildTestList() {
      buildTest('regex/replace/single/single_replace.js', 5, 3);
      buildTest('regex/replace/single/replace_2.js', 3, 2);
      buildTest('regex/replace/single/replace_3.js', 4, 3);
-     buildTest('regex/replace/substitute/substitute.js', 2, 2);
 
 		 buildTest('regex/replace/global/global_cb.js', 10, 6);
 
@@ -165,9 +160,7 @@ function buildTestList() {
       * Split application model tests
       */
  
-     buildTest('regex/split/split_2', 6, 0);
      buildTest('regex/split/split_3', 15, 3);
-     buildTest('regex/split/split_4', 35, 0);
 
     /**
      * Sticky model tests
@@ -181,9 +174,6 @@ function buildTestList() {
 
     buildTest('regex/search/simple.js', 2, 2);
     buildTest('regex/search/ambiguous1.js', 3, 2);
-    buildTest('regex/search/ambiguous2.js', 3, 1); //One extra path spawned by assume command
-    buildTest('regex/search/ambiguous3.js', 3, 2); //One extra path spawned by assume command
-    buildTest('regex/search/ambiguous4.js', 6, 2); //Forking on test creates redundent (but correct) paths 
     buildTest('regex/search/alt.js', 3, 3);
     buildTest('regex/search/not_at_start.js', 3, 3);
     buildTest('regex/search/test_at_start.js', 5, 4);
