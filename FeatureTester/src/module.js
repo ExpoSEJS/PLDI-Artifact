@@ -84,9 +84,9 @@ module.exports = function(target, log, done) {
         logErr(log, target, err);
         log.out('DONE:' + target + ' ' + '0' + ' ' + '0' + ' ' + '0' + ' ' + coverage_final);
         done();
-        //RunCov(target, 'DISABLE_REGULAR_EXPRESSIONS', function(coverage_no_re, r, err) {
-        //    logErr(log, target, err);
-            /*if (coverage_final - coverage_no_re != 0) {
+        RunCov(target, 'DISABLE_REGULAR_EXPRESSIONS', function(coverage_no_re, r, err) {
+            logErr(log, target, err);
+            if (coverage_final - coverage_no_re != 0) {
                     RunCov(target, 'DISABLE_CAPTURE_GROUPS', function(coverage_no_cap, r, err) {
                         logErr(log, target, err);
                         RunCov(target, 'DISABLE_REFINEMENTS', function(coverage_no_ref, r, err) {
@@ -96,10 +96,9 @@ module.exports = function(target, log, done) {
                         });
                     });
             } else {
-                */
-                //log.out('DONE:' + target + ' ' + coverage_no_re + ' ' + '0' + ' ' + '0' + ' ' + coverage_final);
-                //done();
-            //}
-        //});
+                log.out('DONE:' + target + ' ' + coverage_no_re + ' ' + '0' + ' ' + '0' + ' ' + coverage_final);
+                done();
+            }
+        });
     });
 }

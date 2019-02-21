@@ -51,7 +51,7 @@ resumeFrom(ofile, function(doneList) {
 	  if (!doneList.find(x => x === item)) {
 	  	Scheduler.queue(RunTest.bind(this, item));
 	  } else {
-		//console.log('Skipping ' + item);
+		  console.log('Skipping ' + item);
 	  }
 	});
 

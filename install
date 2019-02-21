@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 echo "NOTICE: Tested with"
-echo "node 8.15.0"
-echo "npm 6.4.1"
-echo "clang 3.8.0"
-echo "build-essential"
+echo "- Node.js 8.15.0 (as node in $PATH)"
+echo "- Npm 6.4.1 (as npm in $PATH)"
+echo "- clang (tested with 3.7)"
+echo "- make"
+echo "- git"
+echo "- python 2.7 (as python in $PATH)"
 
 read  -n 1 -p "Press any key to continue" cont
 

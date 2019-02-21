@@ -22,6 +22,7 @@ The following libraries are required for ExpoSE to install properly. We have tes
 - clang (tested with 3.7)
 - make
 - git
+- python 2.7 (as python in $PATH)
 
 ### Installation
 
