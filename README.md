@@ -36,8 +36,23 @@ cd PLDI-Artifact
 
 On a successful installation, the script will output:
 ```
-TODO
+**************************
+*         Summary        *
+**************************
+*        164 complete     *
+*        0 errors        *
+**************************
 ```
+and 
+```
+**************************
+*         Summary        *
+**************************
+*        26 complete     *
+*        0 errors        *
+**************************
+```
+somewhere in there output, corresponding to the tests of each version of ExpoSE.
 
 ### Virtual Machine Image
 
@@ -180,7 +195,18 @@ Note: Error counts from automated harnesses should be ignored. As we do not know
 
 ### Viewing Solver Time Statistics
 
-In Table 8 we describe the solver time statistics for packages and queries. For test cases you run, you can find these [TODO].
+In Table 8 we describe the solver time statistics for packages and queries. In order to generate per-path query statistics the `EXPOSE_QUERY_DUMP="directory path"` environment variable must be set. For example, if we run:
+```
+EXPOSE_QUERY_DUMP="~/expose_query_timings/" ./run_automatic_harness_pldi minimist
+```
+
+After analysis has finished executed some paths, running `ls ~/expose_query_timings` should display a set of files. Inside each of these files contains a set of JSON encoded information about query statistics for a given path. We have included a tool to interpret these results. Running:
+```
+node ./summarize_dump.js ~/expose_query_timings
+```
+will give summarized information about all queries in the path. As these query directories are not cleaned up automatically between executions it is important to clear it (`rm -rf ~/expose_query_timings`) between executions.
+
+Note: Query statistics are only supported on the new version of ExpoSE and the legacy version will ignore the flag.
 
 ## Repeating all experiments 
 
