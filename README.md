@@ -94,10 +94,9 @@ To analyze regular expression usage in a custom package:
 - Rerun `./run_small_regex_crawl`, the package will be automatically detected when the crawler is launched.  
 
 ### Repeating the Experiment 
-In order to repeat the entire survey across npm, run the script [TODO]. Note that [TODO].
+In order to repeat the entire survey across npm, a tool called Scraper is provided in artifact/crawlr/Scraper/. To use this first an entire NPM database must be downloaded with the dl_all script. Next, the run script should be called with the downloaded database. Then each package on NPM will be downloaded as a tarball and extracted. The entire database is quite large and downloading it will take some time to download the entire dataset.
 
 ## Evaluating ExpoSE
-
 In this section we show how to use ExpoSE on simple programs (microbenchmarks) and on full npm libraries (using our automated harness generation tool). Finally, we detail how you can construct your own symbolic test case and then analyze it with ExpoSE. The claims in our paper (Sections 7.2-7.4) can be evaluated through execution of our microbenchmark suite and by execution of ExpoSE on real programs through an automated harness generator. 
 
 ### Testing Each Feature
