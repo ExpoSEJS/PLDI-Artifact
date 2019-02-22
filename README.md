@@ -57,7 +57,7 @@ somewhere in there output, corresponding to the tests of each version of ExpoSE.
 
 ### Virtual Machine Image
 
-We have prepared a VirtualBox image running Ubuntu server with the artifact pre-installed. The VirtualBox image is available [TODO: HERE].
+We have prepared a VirtualBox image running Ubuntu server with the artifact pre-installed. The VirtualBox image is available at https://drive.google.com/drive/folders/1iFnHtxeTLuWGYS5qJAfZgkTeFS-6tfFu?usp=sharing.
 
 Once the machine has finished booting the user details
 
@@ -162,7 +162,7 @@ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)) {
 }
 ```
 
-Executing this with `./run_script_pldi ./example_script.js`. Because the regular expression is complex this might take a while is complete, but after execution we should see output like:
+Executing this with `./run_script_pldi ./example_script.js`. Because the regular expression is complex this might take a while to complete, but after execution we should see output like:
 ```
 [+] {"_bound":0,"Email Address":"hello world"} took 0.31s
 [+] {"Email Address":"_Y@3.P8","_bound":21} took 0.0013s
