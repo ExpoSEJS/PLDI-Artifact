@@ -162,7 +162,7 @@ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)) {
 }
 ```
 
-Executing this with `./run_script_pldi ./example_script.js`. Because the regular expression is complex this might take a while is complete, but after execution we should see output like:
+Executing this with `./run_script_pldi ./example_script.js`. Because the regular expression is complex this might take a while to complete, but after execution we should see output like:
 ```
 [+] {"_bound":0,"Email Address":"hello world"} took 0.31s
 [+] {"Email Address":"_Y@3.P8","_bound":21} took 0.0013s
