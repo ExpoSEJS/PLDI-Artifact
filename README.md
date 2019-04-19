@@ -1,4 +1,4 @@
-# "Sound Regular Expression Semantics for Dynamic Symbolic Execution of JavaScript" PLDI 2019 Paper#678 Artifact Evaluation
+# "Sound Regular Expression Semantics for Dynamic Symbolic Execution of JavaScript" PLDI 2019 Paper#678 Artifact
   
 The central contribution of this paper is a modification to the ExpoSE symbolic execution engine adding support for complex JavaScript regular expressions. The support for these regular expressions will often lead to better program analysis in JavaScript applications as the feature is highly utilized. A core part of this support is the introduction of a CEGAR loop on top of the solver which can make small corrections to SMT problems to account for incorrect matching precedence.
 
